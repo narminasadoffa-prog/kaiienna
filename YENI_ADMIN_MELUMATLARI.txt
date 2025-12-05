@@ -1,0 +1,67 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   🔐 YENİ ADMIN GİRİŞ MƏLUMATLARI                          ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+📧 YENİ EMAIL (Login):
+   admin@kaiienna.az
+
+🔑 YENİ ŞİFRƏ (Password):
+   Admin2024!
+
+═══════════════════════════════════════════════════════════
+
+🌐 KEÇİD LİNKLƏRİ:
+
+   Giriş səhifəsi:
+   http://localhost:3007/auth/signin
+
+   Admin panel:
+   http://localhost:3007/admin
+
+═══════════════════════════════════════════════════════════
+
+🛠️ ADMIN YARATMAQ:
+
+Yeni admin istifadəçisini yaratmaq üçün:
+
+1. Terminal açın (proyekt qovluğunda)
+2. Bu əmri icra edin:
+   npm run create-admin
+
+Bu əmr yeni admin istifadəçisini yaradacaq:
+   Email: admin@kaiienna.az
+   Şifrə: Admin2024!
+
+═══════════════════════════════════════════════════════════
+
+📝 FƏRQLİ MƏLUMATLAR İSTƏYİRSİNİZSƏ:
+
+Mühit dəyişənlərini təyin edin:
+
+Windows PowerShell:
+   $env:ADMIN_EMAIL="sizin@email.com"
+   $env:ADMIN_PASSWORD="SizinSifre123!"
+   npm run create-admin
+
+Və ya .env.local faylına əlavə edin:
+   ADMIN_EMAIL=sizin@email.com
+   ADMIN_PASSWORD=SizinSifre123!
+   ADMIN_NAME=Sizin Ad
+
+Sonra:
+   npm run create-admin
+
+═══════════════════════════════════════════════════════════
+
+✅ İSTİFADƏ:
+
+1. Giriş səhifəsinə keçin
+2. Email: admin@kaiienna.az
+3. Şifrə: Admin2024!
+4. "Daxil ol" düyməsini basın
+
+═══════════════════════════════════════════════════════════
+
+

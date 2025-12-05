@@ -1,0 +1,93 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   📝 .env.local FAYLI YARADMAQ                            ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+❌ PROBLEM:
+   DATABASE_URL təyin edilməyib!
+   NEXTAUTH_URL port 3000-dədir (3007 olmalıdır)
+
+═══════════════════════════════════════════════════════════
+
+✅ HƏLL:
+
+1️⃣  .env.local FAYLI YARADIN:
+
+   Proyektin kök qovluğunda (package.json ilə eyni yerdə)
+   .env.local adlı fayl yaradın.
+
+═══════════════════════════════════════════════════════════
+
+2️⃣  AŞAĞIDAKI MƏZMUNU ƏLAVƏ EDİN:
+
+   ┌─────────────────────────────────────────────────────┐
+   │ DATABASE_URL="postgresql://postgres:password@..."  │
+   │ NEXTAUTH_SECRET="dev-secret-key-12345"             │
+   │ NEXTAUTH_URL="http://localhost:3007"               │
+   └─────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════
+
+3️⃣  POSTGRESQL QUraşdırması:
+
+   SEÇİM 1: Lokal PostgreSQL
+   - https://www.postgresql.org/download/
+   - Quraşdırın və işə salın
+   - Default istifadəçi: postgres
+   - Şifrə: quraşdırma zamanı təyin etdiyiniz
+
+   SEÇİM 2: Cloud Database (Tövsiyə olunur)
+   - Supabase: https://supabase.com (Pulsuz)
+   - Railway: https://railway.app (Pulsuz)
+   - Neon: https://neon.tech (Pulsuz)
+   
+   Connection string-i kopyalayın və DATABASE_URL-ə yapışdırın.
+
+═══════════════════════════════════════════════════════════
+
+4️⃣  NÜMUNƏ .env.local:
+
+   PostgreSQL istifadə edirsinizsə:
+   
+   DATABASE_URL="postgresql://postgres:mypassword@localhost:5432/kaiienna?schema=public"
+   NEXTAUTH_SECRET="dev-secret-key-12345"
+   NEXTAUTH_URL="http://localhost:3007"
+
+   Supabase istifadə edirsinizsə:
+   
+   DATABASE_URL="postgresql://postgres.xxxxx:password@aws-0-eu-central-1.pooler.supabase.com:6543/postgres"
+   NEXTAUTH_SECRET="dev-secret-key-12345"
+   NEXTAUTH_URL="http://localhost:3007"
+
+═══════════════════════════════════════════════════════════
+
+5️⃣  QUraşdırmadan SONRA:
+
+   Terminalda:
+   
+   npm run db:generate
+   npm run db:push
+   npm run create-admin
+
+═══════════════════════════════════════════════════════════
+
+6️⃣  YOXLAYIN:
+
+   Brauzerdə:
+   http://localhost:3007/api/auth/debug
+   
+   Terminalda:
+   npm run check-auth
+
+═══════════════════════════════════════════════════════════
+
+⚠️  QEYD:
+
+   - .env.local faylı .gitignore-da olmalıdır (git-ə yüklənməməlidir)
+   - password-u öz şifrənizlə əvəz edin
+   - NEXTAUTH_URL port 3007 olmalıdır (3000 deyil!)
+
+═══════════════════════════════════════════════════════════
+
+

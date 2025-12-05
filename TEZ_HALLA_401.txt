@@ -1,0 +1,101 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   🚨 401 XƏTASINI TEZ HƏLL ET                             ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════
+
+📋 ADDIM-ADDIM HƏLL:
+
+1️⃣  YOXLAMA SKRİPTİNİ İŞLƏDİN:
+
+   Terminalda:
+   npm run check-auth
+
+   Bu skript göstərəcək:
+   - Verilənlər bazası bağlıdırmı?
+   - Admin istifadəçisi varmı?
+   - NEXTAUTH_SECRET təyin edilibmi?
+
+═══════════════════════════════════════════════════════════
+
+2️⃣  ƏGƏR VERİLƏNLƏR BAZASI BAĞLI DEYİLSƏ:
+
+   a) .env.local faylını açın
+   b) DATABASE_URL əlavə edin:
+      
+      DATABASE_URL="postgresql://user:password@localhost:5432/kaiienna?schema=public"
+      
+      (user və password-u öz məlumatlarınızla əvəz edin)
+
+   c) Prisma Client yaradın:
+      npm run db:generate
+
+   d) Verilənlər bazasına qoşulun:
+      npm run db:push
+
+═══════════════════════════════════════════════════════════
+
+3️⃣  ƏGƏR ADMIN İSTİFADƏÇİSİ YOXDURSA:
+
+   Terminalda:
+   npm run create-admin
+
+   Bu admin yaradacaq:
+   Email: admin@kaiienna.az
+   Şifrə: Admin2024!
+
+═══════════════════════════════════════════════════════════
+
+4️⃣  ƏGƏR NEXTAUTH_SECRET YOXDURSA:
+
+   a) .env.local faylını açın
+   b) Əlavə edin:
+      
+      NEXTAUTH_SECRET=dev-secret-key-12345
+      NEXTAUTH_URL=http://localhost:3007
+
+   c) Serveri yenidən başladın (Ctrl+C, sonra npm run dev)
+
+═══════════════════════════════════════════════════════════
+
+5️⃣  SERVERİ YENİDƏN BAŞLADIN:
+
+   - Ctrl+C (dayandırın)
+   - npm run dev (yenidən başladın)
+
+═══════════════════════════════════════════════════════════
+
+6️⃣  GİRİŞ SƏHİFƏSİNDƏ YOXLAYIN:
+
+   URL: http://localhost:3007/auth/signin
+   
+   Email: admin@kaiienna.az
+   Şifrə: Admin2024!
+
+═══════════════════════════════════════════════════════════
+
+🔍 ƏTRAFLI YOXLAMA:
+
+1. Verilənlər bazası:
+   http://localhost:3007/api/auth/test
+
+2. İstifadəçi yoxlama:
+   http://localhost:3007/api/auth/check-user?email=admin@kaiienna.az
+
+3. Terminal loglarını yoxlayın (serveri işlədikdə)
+
+═══════════════════════════════════════════════════════════
+
+💡 ƏN ÇOX RAST GƏLİNƏN SƏBƏBLƏR:
+
+1. PostgreSQL quraşdırılmayıb və ya işləmir
+2. DATABASE_URL səhvdir
+3. Admin istifadəçisi yaradılmayıb
+4. NEXTAUTH_SECRET təyin edilməyib
+5. Server cache problemi (.next qovluğu)
+
+═══════════════════════════════════════════════════════════
+
+

@@ -1,0 +1,61 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   🔐 ADMIN PANEL GİRİŞ MƏLUMATLARI                        ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+📧 EMAIL (Login):
+   admin@example.com
+
+🔑 ŞİFRƏ (Password):
+   admin123
+
+═══════════════════════════════════════════════════════════
+
+🌐 KEÇİD LİNKLƏRİ:
+
+   Giriş səhifəsi:
+   http://localhost:3007/auth/signin
+
+   Admin panel (girişdən sonra):
+   http://localhost:3007/admin
+
+═══════════════════════════════════════════════════════════
+
+⚠️ ƏHƏMİYYƏTLİ:
+
+Əgər admin istifadəçisi hələ yaradılmayıbsa, aşağıdakı əmri icra edin:
+
+1. Terminal açın (proyekt qovluğunda)
+2. Bu əmri icra edin:
+   npm run create-admin
+
+Və ya:
+   npx tsx scripts/create-admin.ts
+
+═══════════════════════════════════════════════════════════
+
+📝 MƏLUMATLARI DƏYİŞDİRMƏK:
+
+Email və ya şifrəni dəyişdirmək istəyirsinizsə, 
+mühit dəyişənlərini təyin edin:
+
+ADMIN_EMAIL=sizin@email.com
+ADMIN_PASSWORD=sizin_sifre
+ADMIN_NAME=Sizin Ad
+
+Sonra icra edin:
+npm run create-admin
+
+═══════════════════════════════════════════════════════════
+
+✅ İSTİFADƏ:
+
+1. Giriş səhifəsinə keçin: http://localhost:3007/auth/signin
+2. Email və şifrəni daxil edin
+3. "Daxil ol" düyməsini basın
+4. Admin paneldə olacaqsınız
+
+═══════════════════════════════════════════════════════════
+
+

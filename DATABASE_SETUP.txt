@@ -1,0 +1,98 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   🔧 VERİLƏNLƏR BAZASI QUraşdırması                     ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+❌ PROBLEM:
+   DATABASE_URL təyin edilməyib!
+   Bu, 401 xətasının əsas səbəbidir.
+
+═══════════════════════════════════════════════════════════
+
+✅ HƏLL YOLLARI:
+
+═══════════════════════════════════════════════════════════
+
+1️⃣  POSTGRESQL İSTİFADƏ EDİN (Tövsiyə olunur):
+
+   a) PostgreSQL quraşdırın (əgər yoxdursa):
+      https://www.postgresql.org/download/
+
+   b) PostgreSQL-i işə salın
+
+   c) .env.local faylını yaradın və əlavə edin:
+      
+      DATABASE_URL="postgresql://postgres:yourpassword@localhost:5432/kaiienna?schema=public"
+      
+      (yourpassword-u öz şifrənizlə əvəz edin)
+
+   d) Terminalda:
+      npm run db:generate
+      npm run db:push
+      npm run create-admin
+
+═══════════════════════════════════════════════════════════
+
+2️⃣  CLOUD DATABASE İSTİFADƏ EDİN (Asan yol):
+
+   a) Supabase (Pulsuz):
+      - https://supabase.com
+      - Yeni layihə yaradın
+      - Settings > Database > Connection string kopyalayın
+      - .env.local-ə əlavə edin
+
+   b) Railway (Pulsuz):
+      - https://railway.app
+      - PostgreSQL əlavə edin
+      - Connection string kopyalayın
+
+   c) Neon (Pulsuz):
+      - https://neon.tech
+      - Yeni layihə yaradın
+      - Connection string kopyalayın
+
+═══════════════════════════════════════════════════════════
+
+3️⃣  .env.local FAYLI YARADIN:
+
+   Proyektin kök qovluğunda .env.local faylı yaradın:
+
+   ┌─────────────────────────────────────────┐
+   │ DATABASE_URL="postgresql://..."         │
+   │ NEXTAUTH_SECRET="dev-secret-key-12345"  │
+   │ NEXTAUTH_URL="http://localhost:3007"   │
+   └─────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════
+
+4️⃣  QUraşdırmadan SONRA:
+
+   Terminalda:
+   npm run check-auth
+
+   Bu, hər şeyin düzgün olduğunu yoxlayacaq.
+
+═══════════════════════════════════════════════════════════
+
+📋 NÜMUNƏ .env.local:
+
+   DATABASE_URL="postgresql://postgres:mypassword@localhost:5432/kaiienna?schema=public"
+   NEXTAUTH_SECRET="dev-secret-key-12345"
+   NEXTAUTH_URL="http://localhost:3007"
+   ADMIN_EMAIL="admin@kaiienna.az"
+   ADMIN_PASSWORD="Admin2024!"
+
+═══════════════════════════════════════════════════════════
+
+🔍 YOXLAMA:
+
+   Terminalda:
+   npm run check-auth
+
+   Və ya brauzerdə:
+   http://localhost:3007/api/auth/test
+
+═══════════════════════════════════════════════════════════
+
+

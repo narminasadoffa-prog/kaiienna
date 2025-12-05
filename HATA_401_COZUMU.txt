@@ -1,0 +1,82 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   🔧 401 UNAUTHORIZED XƏTASININ HƏLLİ                     ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+❌ PROBLEM:
+   401 (Unauthorized) xətası alırsınız
+
+═══════════════════════════════════════════════════════════
+
+✅ HƏLL YOLLARI:
+
+1. VERİLƏNLƏR BAZASINI YOXLAYIN:
+
+   Terminalda:
+   npm run db:push
+
+   Və ya:
+   npm run db:migrate
+
+═══════════════════════════════════════════════════════════
+
+2. ADMIN İSTİFADƏÇİSİNİ YARADIN:
+
+   Terminalda:
+   npm run create-admin
+
+   Bu əmr admin yaradacaq:
+   Email: admin@kaiienna.az
+   Şifrə: Admin2024!
+
+═══════════════════════════════════════════════════════════
+
+3. NEXTAUTH_SECRET YOXLAYIN:
+
+   .env.local faylında olmalıdır:
+   NEXTAUTH_SECRET=dev-secret-key-12345
+   NEXTAUTH_URL=http://localhost:3007
+
+   Əgər yoxdursa, əlavə edin və serveri yenidən başladın.
+
+═══════════════════════════════════════════════════════════
+
+4. VERİLƏNLƏR BAZASI BAĞLANTISINI YOXLAYIN:
+
+   Brauzerdə açın:
+   http://localhost:3007/api/auth/test
+
+   Əgər "Database connection OK" görsəniz, baza işləyir.
+   Əgər xəta görsəniz, DATABASE_URL-i yoxlayın.
+
+═══════════════════════════════════════════════════════════
+
+5. SERVERİ YENİDƏN BAŞLADIN:
+
+   Terminalda:
+   - Ctrl+C (dayandırın)
+   - npm run dev (yenidən başladın)
+
+═══════════════════════════════════════════════════════════
+
+📋 YOXLAMA SİYAHISI:
+
+□ Verilənlər bazası yaradılıb (npm run db:push)
+□ Admin istifadəçisi yaradılıb (npm run create-admin)
+□ .env.local faylında NEXTAUTH_SECRET var
+□ .env.local faylında NEXTAUTH_URL var
+□ Server yenidən başladılıb
+□ Brauzer cache təmizlənib (Ctrl+Shift+R)
+
+═══════════════════════════════════════════════════════════
+
+🔍 ƏTRAFLI YOXLAMA:
+
+1. Terminalda server loglarını yoxlayın
+2. Brauzer konsolunda (F12) xətaları yoxlayın
+3. Network tab-da /api/auth/callback/credentials sorğusunu yoxlayın
+
+═══════════════════════════════════════════════════════════
+
+
